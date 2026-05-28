@@ -130,14 +130,9 @@ resultsDiv.textContent = "You searched for: " + searchQuery;
             const resultsDiv = document.getElementById('results');
             resultsDiv.style.display = 'block';
             
-            // Create a text node or use textContent to ensure the input is safely encoded
-            resultsDiv.innerHTML = "You searched for: ";
+            resultsDiv.innerHTML = "You searched for: <strong>" + searchQuery + "</strong>";
             
-            const boldTag = document.createElement('strong');
-            // SAFE SINK: textContent automatically encodes special characters like < and >
-            boldTag.textContent = searchQuery; 
-            
-            resultsDiv.appendChild(boldTag);
+            document.getElementById('searchInput').value = searchQuery;
         }
     </script>
 
